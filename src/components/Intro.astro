@@ -1,0 +1,91 @@
+---
+---
+<div id="intro-overlay" class="fixed inset-0 z-[100] flex overflow-hidden antialiased">
+    
+    <div id="door-left" class="w-1/2 h-full bg-[#002444] relative flex items-center justify-end transition-transform duration-[2000ms] cubic-bezier(0.4, 0, 0.2, 1) z-10">
+        <div class="absolute inset-y-4 left-4 right-0 bg-[#001a33] rounded-l-[30px] border-y border-l border-amber-500/30 shadow-[20px_0_50px_rgba(0,0,0,0.5)] overflow-hidden">
+            <div class="absolute inset-0 opacity-20" style="background-image: url('https://www.transparenttextures.com/patterns/dark-leather.png');"></div>
+            
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-8 border-r border-amber-500/10">
+                <p class="text-amber-500/60 tracking-[0.4em] text-[10px] uppercase font-bold mb-2">República Argentina</p>
+                
+                <h2 class="font-cookie text-amber-400 text-6xl md:text-8xl drop-shadow-lg">Ludmila</h2>
+                <div class="mt-4 flex gap-2">
+                    <span class="px-2 py-1 border border-amber-500/30 rounded text-[8px] text-amber-500/40 uppercase font-mono">B-2027-AR</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="door-right" class="w-1/2 h-full bg-[#002444] relative flex items-center justify-start transition-transform duration-[2000ms] cubic-bezier(0.4, 0, 0.2, 1) z-10">
+        <div class="absolute inset-y-4 right-4 left-0 bg-[#001a33] rounded-r-[30px] border-y border-r border-amber-500/30 shadow-[-20px_0_50px_rgba(0,0,0,0.5)] overflow-hidden">
+            <div class="absolute inset-0 opacity-20" style="background-image: url('https://www.transparenttextures.com/patterns/dark-leather.png');"></div>
+            
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-8 border-l border-amber-500/10">
+                <div class="mb-4 md:mb-10 opacity-60">
+    <div class="border-2 border-dashed border-amber-500/40 p-7 rotate-12 rounded-lg">
+        <p class="text-amber-500 text-[10px] font-mono leading-none font-bold uppercase">Punta Cana<br/>International<br/>Airport</p>
+        <p class="text-amber-500 text-[8px] font-mono mt-1 border-t border-amber-500/20 pt-1">13 MAR 2027</p>
+    </div>
+</div>
+                <p class="text-amber-500/60 tracking-[0.4em] text-[10px] uppercase font-bold mb-2 text-transparent">.</p>
+                <div class="w-20 h-[1px] bg-amber-500/20 mb-10"></div>
+                <h2 class="font-cookie text-amber-400 text-6xl md:text-8xl drop-shadow-lg">Jorge</h2>
+                <p class="mt-6 text-amber-400/80 tracking-[0.2em] text-xs uppercase italic">Pasaporte de Boda</p>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+
+   <div id="intro-content" class="absolute inset-0 flex flex-col items-center justify-end pb-20 md:pb-32 z-[120] transition-all duration-700">
+    <button id="btn-ingresar" class="group relative px-12 py-5 bg-amber-400 text-[#001a33] font-black uppercase text-sm tracking-[0.3em] rounded-full shadow-[0_0_40px_rgba(0,0,0,0.5)] hover:scale-105 hover:bg-white transition-all active:scale-95 overflow-hidden">
+        <span class="relative z-10 flex items-center gap-3">
+            Ingresar ✈
+        </span>
+    </button>
+</div>
+
+<style>
+    /* Efecto de apertura de telón suave */
+    .open-left { 
+        transform: translateX(-100%); 
+    }
+    .open-right { 
+        transform: translateX(100%); 
+    }
+    
+    .fade-out-content { 
+        opacity: 0; 
+        transform: scale(0.9);
+        pointer-events: none; 
+    }
+
+    /* Curva de animación personalizada para que sea más natural */
+    .cubic-bezier {
+        transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    }
+</style>
+
+<script>
+    const btn = document.getElementById('btn-ingresar');
+    const overlay = document.getElementById('intro-overlay');
+    const left = document.getElementById('door-left');
+    const right = document.getElementById('door-right');
+    const content = document.getElementById('intro-content');
+
+    btn?.addEventListener('click', () => {
+        // 1. Desvanecemos el botón inmediatamente
+        content?.classList.add('fade-out-content');
+        
+        // 2. Abrimos las puertas (el fondo de la web ya se verá en las rendijas)
+        left?.classList.add('open-left');
+        right?.classList.add('open-right');
+
+        // 3. Eliminamos el overlay del todo cuando termine de abrirse
+        setTimeout(() => {
+            overlay?.classList.add('hidden');
+        }, 2100);
+    });
+</script>

@@ -1,0 +1,100 @@
+---
+---
+<div id="countdown-container" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 px-4 max-w-4xl mx-auto">
+    <div class="glass-box">
+        <span id="days" class="number">00</span>
+        <span class="label">Días</span>
+    </div>
+    <div class="glass-box">
+        <span id="hours" class="number">00</span>
+        <span class="label">Horas</span>
+    </div>
+    <div class="glass-box">
+        <span id="minutes" class="number">00</span>
+        <span class="label">Minutos</span>
+    </div>
+    <div class="glass-box">
+        <span id="seconds" class="number">00</span>
+        <span class="label">Segundos</span>
+    </div>
+</div>
+
+<style>
+    .glass-box {
+        @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 md:p-8 
+               flex flex-col items-center justify-center shadow-xl transition-transform duration-500;
+    }
+    .number {
+        @apply text-4xl md:text-6xl font-bold text-amber-200 tabular-nums;
+    }
+    .label {
+        @apply text-[10px] md:text-xs uppercase tracking-[0.3em] text-white/70 mt-2 font-light;
+    }
+</style>
+
+<script>
+    // Fecha de la boda: 9 de Marzo de 2027
+    const targetDate = new Date('March 09, 2027 18:00:00').getTime();
+    let hasStarted = false;
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const difference = targetDate - now;
+
+        const d = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((difference % (1000 * 60)) / 1000);
+
+        // Si ya arrancó la animación, actualizamos directo
+        if (hasStarted) {
+            document.getElementById('days').innerText = String(d).padStart(2, '0');
+            document.getElementById('hours').innerText = String(h).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(m).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(s).padStart(2, '0');
+        }
+    }
+
+    // Función para animar los números de 0 al valor real
+    function animateValue(id, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            const value = Math.floor(progress * (end - start) + start);
+            document.getElementById(id).innerText = String(value).padStart(2, '0');
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+
+    // Observer para detectar cuando la sección es visible
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !hasStarted) {
+                const now = new Date().getTime();
+                const diff = targetDate - now;
+                
+                const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+                // Animamos cada bloque (duración 2 segundos)
+                animateValue("days", 0, d, 2000);
+                animateValue("hours", 0, h, 2000);
+                animateValue("minutes", 0, m, 2000);
+                animateValue("seconds", 0, s, 2000);
+
+                hasStarted = true;
+                // Iniciamos el intervalo por segundo después de la animación inicial
+                setInterval(updateCountdown, 1000);
+            }
+        });
+    }, { threshold: 0.5 }); // Se dispara cuando se ve el 50% de la sección
+
+    const container = document.getElementById('countdown-container');
+    if (container) observer.observe(container);
+</script>
