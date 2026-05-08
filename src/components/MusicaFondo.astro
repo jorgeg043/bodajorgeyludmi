@@ -1,0 +1,48 @@
+<div class="fixed bottom-10 right-10 z-[100]">
+  <button
+    id="music-btn"
+    class="w-14 h-14 bg-amber-400 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(251,191,36,0.6)] cursor-pointer"
+  >
+    <svg id="icon-play" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 fill-black" viewBox="0 0 24 24">
+      <path d="M8 5v14l11-7z"/>
+    </svg>
+    <svg id="icon-pause" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 fill-black hidden" viewBox="0 0 24 24">
+      <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+    </svg>
+  </button>
+</div>
+
+  <audio id="bg-audio" loop>
+    <source src="/audio/musica.mp3" type="audio/mpeg" />
+    Tu navegador no soporta el elemento de audio.
+  </audio>
+</div>
+
+<script>
+  const btn = document.getElementById('music-btn');
+  const audio = document.getElementById('bg-audio') as HTMLAudioElement;
+  const iconPlay = document.getElementById('icon-play');
+  const iconPause = document.getElementById('icon-pause');
+
+  btn?.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play();
+      iconPlay?.classList.add('hidden');
+      iconPause?.classList.remove('hidden');
+    } else {
+      audio.pause();
+      iconPlay?.classList.remove('hidden');
+      iconPause?.classList.add('hidden');
+    }
+  });
+</script>
+
+<style>
+  #music-btn {
+    animation: floating 3s ease-in-out infinite;
+  }
+  @keyframes floating {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+</style>
