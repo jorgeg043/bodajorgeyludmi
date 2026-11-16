@@ -2,14 +2,16 @@
 import Layout from '../layouts/Layout.astro';
 import Intro from '../components/Intro.astro';
 import Contador from '../components/contador.astro';
-import MusicaFondo from '../components/MusicaFondo.astro'; // <--- IMPORTAR
+import MusicaFondo from '../components/MusicaFondo.astro';
 ---
 
 <Layout title="L & J | 2027">
-    <MusicaFondo /> <Intro />
+    <MusicaFondo /> 
+    <Intro />
     
-    <main class="h-screen w-full overflow-y-auto snap-y snap-mandatory scroll-smooth touch-pan-y antialiased">
+    <main class="h-[100dvh] w-full overflow-y-auto snap-y snap-mandatory scroll-smooth touch-pan-y antialiased">
         
+        <!-- SECCIÓN 1: HERO -->
         <section class="snap-start relative w-full h-[100dvh] overflow-hidden flex items-center justify-center">
             <div class="absolute inset-0 z-0">
                 <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/70 z-10"></div>
@@ -45,267 +47,420 @@ import MusicaFondo from '../components/MusicaFondo.astro'; // <--- IMPORTAR
             </div>
         </section>
 
-        <section class="snap-start relative w-full h-screen overflow-hidden flex flex-col items-center justify-center p-4">
-    <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 bg-black/60 backdrop-blur-[2px] z-10"></div>
-        <img 
-            src="/images/fondo-contador.jpg" 
-            class="w-full h-full object-cover" 
-            alt="Fondo Contador"
-        />
-    </div>
-
-    <div class="relative z-20 w-full max-w-4xl flex flex-col items-center">
-        <h2 class="text-amber-200 text-5xl md:text-7xl font-cookie mb-12 drop-shadow-lg opacity-0 animate-fade">
-            Cuenta regresiva...
-        </h2>
-        
-        <div class="w-full">
-            <Contador />
-        </div>
-    </div>
-</section>
-        </section>
-
-       <section class="snap-start relative w-full min-h-screen bg-[#050505] flex items-center justify-center py-20 px-4 overflow-hidden">
-    <div class="max-w-6xl w-full relative z-10">
-        <h2 class="text-center text-amber-200 text-5xl md:text-7xl font-cookie mb-24 opacity-0 animate-fade">
-            Nuestra Historia
-        </h2>
-
-        <div class="flex flex-col md:flex-row items-center justify-around gap-16 md:gap-8">
-            
-            <div class="flex flex-col items-center group">
-                <div class="relative p-1">
-                    <div class="absolute -inset-2 bg-amber-400/30 rounded-[2.5rem] blur-2xl animate-pulse-glow"></div>
-                    <div class="absolute inset-0 border-2 border-amber-300 rounded-[2.2rem] shadow-[0_0_20px_rgba(251,191,36,0.8),inset_0_0_10px_rgba(251,191,36,0.4)] z-10 animate-pulse"></div>
-                    <div class="relative w-64 h-80 md:w-72 md:h-96 rounded-[2rem] overflow-hidden z-20">
-                        <img src="/images/ludmila.jpg" class="w-full h-full object-cover" alt="Ludmila" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
-                    </div>
-                </div>
-                <div class="mt-8 text-center max-w-xs flex flex-col items-center">
-                    <h3 class="font-cookie text-amber-200 text-5xl mb-3">Ludmila</h3>
-                    <p class="text-slate-300 font-light italic text-sm md:text-base leading-relaxed mb-6">
-                        "Encontré en vos todo lo que no sabía que necesitaba. Sos mi lugar favorito en el mundo."
-                    </p>
-                    <a href="https://instagram.com/_ludmilablanco" target="_blank" rel="noopener noreferrer" 
-                       class="flex items-center gap-2 px-4 py-2 bg-rose-500/10 border border-rose-400/40 rounded-full text-rose-300 text-xs tracking-widest uppercase hover:bg-rose-500/20 hover:border-rose-300 transition-all duration-300 active:scale-95 shadow-[0_0_15px_rgba(244,63,94,0.2)]">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.917 3.917 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
-                        </svg>
-                        Instagram
-                    </a>
-                </div>
-            </div>
-
-            <div class="flex flex-col items-center py-12 md:py-0">
-                <div class="relative group">
-                    <div class="absolute inset-0 bg-amber-500/40 blur-3xl rounded-full animate-pulse"></div>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-20 h-20 fill-amber-400 relative z-10 drop-shadow-[0_0_25px_rgba(251,191,36,0.9)] transition-transform duration-700 group-hover:scale-110 animate-pulse">
-                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                        <path fill="#050505" d="M17.5 13.5v-1.5l-5-3.5v-3c0-.55-.45-1-1-1s-1 .45-1 1v3l-5 3.5v1.5l5-1.5v4l-1.5 1v1l2.5-.5 2.5.5v-1l-1.5-1v-4l5 1.5z" class="origin-center rotate-[45deg]"/>
-                    </svg>
-                </div>
-                <p class="font-cookie text-amber-200/60 text-2xl mt-4 tracking-wider">Sí para siempre</p>
-            </div>
-
-            <div class="flex flex-col items-center group">
-                <div class="relative p-1">
-                    <div class="absolute -inset-2 bg-amber-400/30 rounded-[2.5rem] blur-2xl animate-pulse-glow-delay"></div>
-                    <div class="absolute inset-0 border-2 border-amber-300 rounded-[2.2rem] shadow-[0_0_20px_rgba(251,191,36,0.8),inset_0_0_10px_rgba(251,191,36,0.4)] z-10 animate-pulse"></div>
-                    <div class="relative w-64 h-80 md:w-72 md:h-96 rounded-[2rem] overflow-hidden z-20">
-                        <img src="/images/jorge.jpg" class="w-full h-full object-cover" alt="Jorge" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
-                    </div>
-                </div>
-                <div class="mt-8 text-center max-w-xs flex flex-col items-center">
-                    <h3 class="font-cookie text-amber-200 text-5xl mb-3">Jorge</h3>
-                    <p class="text-slate-300 font-light italic text-sm md:text-base leading-relaxed mb-6">
-                        "Desde el primer día supe que serías mi compañera de aventuras. Gracias por caminar a mi lado."
-                    </p>
-                    <a href="https://instagram.com/jorgegiovagnoli" target="_blank" rel="noopener noreferrer" 
-                       class="flex items-center gap-2 px-4 py-2 bg-rose-500/10 border border-rose-400/40 rounded-full text-rose-300 text-xs tracking-widest uppercase hover:bg-rose-500/20 hover:border-rose-300 transition-all duration-300 active:scale-95 shadow-[0_0_15px_rgba(244,63,94,0.2)]">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.917 3.917 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
-                        </svg>
-                        Instagram
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section class="snap-start relative w-full min-h-screen flex items-center justify-center overflow-hidden py-20 px-4">
-    <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 bg-black/50 z-10"></div> <img 
-            src="/images/fondo-republica.jpg" 
-            class="w-full h-full object-cover blur-sm scale-110" 
-            alt="Fondo Punta Cana"
-        />
-    </div>
-
-    <div class="relative z-20 max-w-4xl w-full text-center">
-        <div class="mb-12 opacity-0 animate-fade">
-            <h2 class="text-amber-200 text-5xl md:text-7xl font-cookie mb-6">El lugar de nuestra Boda</h2>
-            <p class="text-white text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto">
-                Nuestro gran día empieza con un despegue. Salimos de casa con la valija llena de sueños para encontrarnos en las playas de República Dominicana. 
-                <span class="block mt-4 text-amber-100/80 italic">Agenden la fecha, preparen el pasaporte y encontrémonos allá para disfrutar juntos.</span>
-            </p>
-        </div>
-
-        <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-[2.5rem] p-8 md:p-12 shadow-2xl transition-transform hover:scale-[1.02] duration-500">
-            
-            <div class="mb-6 flex justify-center">
+        <!-- SECCIÓN 2: CONTADOR -->
+        <section class="snap-start relative w-full h-[100dvh] overflow-hidden flex flex-col items-center justify-center p-4">
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 bg-black/60 backdrop-blur-[2px] z-10"></div>
                 <img 
-                    src="/images/logo-hotel.png" 
-                    class="h-20 md:h-28 object-contain" 
-                    alt="Logo Grand Palladium"
+                    src="/images/fondo-contador.jpg" 
+                    class="w-full h-full object-cover" 
+                    alt="Fondo Contador"
                 />
             </div>
 
-            <div class="text-white">
-                <span class="text-amber-200 uppercase tracking-[0.3em] text-xs font-bold">Alojamiento All Inclusive</span>
-                <h3 class="text-3xl md:text-4xl font-serif mt-2 mb-1">Grand Palladium Punta Cana</h3>
-                <p class="text-white/60 tracking-widest uppercase text-sm">Resort & Spa</p>
+            <div class="relative z-20 w-full max-w-4xl flex flex-col items-center">
+                <h2 class="text-amber-200 text-5xl md:text-7xl font-cookie mb-12 drop-shadow-lg opacity-0 animate-fade">
+                    Cuenta regresiva...
+                </h2>
+                
+                <div class="w-full">
+                    <Contador />
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: NUESTRA HISTORIA -->
+        <section class="snap-start relative w-full min-h-[100dvh] bg-[#050505] flex items-center justify-center py-20 px-4 overflow-hidden">
+            <div class="max-w-6xl w-full relative z-10">
+                <h2 class="text-center text-amber-200 text-5xl md:text-7xl font-cookie mb-24 opacity-0 animate-fade">
+                    Nuestra Historia
+                </h2>
+
+                <div class="flex flex-col md:flex-row items-center justify-around gap-16 md:gap-8">
+                    
+                    <!-- LUDMILA -->
+                    <div class="flex flex-col items-center group">
+                        <div class="relative p-1">
+                            <div class="absolute -inset-2 bg-amber-400/30 rounded-[2.5rem] blur-2xl animate-pulse-glow"></div>
+                            <div class="absolute inset-0 border-2 border-amber-300 rounded-[2.2rem] shadow-[0_0_20px_rgba(251,191,36,0.8),inset_0_0_10px_rgba(251,191,36,0.4)] z-10 animate-pulse"></div>
+                            <div class="relative w-64 h-80 md:w-72 md:h-96 rounded-[2rem] overflow-hidden z-20">
+                                <img src="/images/ludmila.jpg" class="w-full h-full object-cover" alt="Ludmila" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+                            </div>
+                        </div>
+                        <div class="mt-8 text-center max-w-xs flex flex-col items-center">
+                            <h3 class="font-cookie text-amber-200 text-5xl mb-3">Ludmila</h3>
+                            <p class="text-slate-300 font-light italic text-sm md:text-base leading-relaxed mb-6">
+                                "Encontré en vos todo lo que no sabía que necesitaba. Sos mi lugar favorito en el mundo."
+                            </p>
+                            <a href="https://instagram.com/_ludmilablanco" target="_blank" rel="noopener noreferrer" 
+                               class="flex items-center gap-2 px-4 py-2 bg-rose-500/10 border border-rose-400/40 rounded-full text-rose-300 text-xs tracking-widest uppercase hover:bg-rose-500/20 hover:border-rose-300 transition-all duration-300 active:scale-95 shadow-[0_0_15px_rgba(244,63,94,0.2)]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.917 3.917 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                                </svg>
+                                Instagram
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- CORAZÓN CENTRAL -->
+                    <div class="flex flex-col items-center py-12 md:py-0">
+                        <div class="relative group">
+                            <div class="absolute inset-0 bg-amber-500/40 blur-3xl rounded-full animate-pulse"></div>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-20 h-20 fill-amber-400 relative z-10 drop-shadow-[0_0_25px_rgba(251,191,36,0.9)] transition-transform duration-700 group-hover:scale-110 animate-pulse">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                <path fill="#050505" d="M17.5 13.5v-1.5l-5-3.5v-3c0-.55-.45-1-1-1s-1 .45-1 1v3l-5 3.5v1.5l5-1.5v4l-1.5 1v1l2.5-.5 2.5.5v-1l-1.5-1v-4l5 1.5z" class="origin-center rotate-[45deg]"/>
+                            </svg>
+                        </div>
+                        <p class="font-cookie text-amber-200/60 text-2xl mt-4 tracking-wider">Sí para siempre</p>
+                    </div>
+
+                    <!-- JORGE -->
+                    <div class="flex flex-col items-center group">
+                        <div class="relative p-1">
+                            <div class="absolute -inset-2 bg-amber-400/30 rounded-[2.5rem] blur-2xl animate-pulse-glow-delay"></div>
+                            <div class="absolute inset-0 border-2 border-amber-300 rounded-[2.2rem] shadow-[0_0_20px_rgba(251,191,36,0.8),inset_0_0_10px_rgba(251,191,36,0.4)] z-10 animate-pulse"></div>
+                            <div class="relative w-64 h-80 md:w-72 md:h-96 rounded-[2rem] overflow-hidden z-20">
+                                <img src="/images/jorge.jpg" class="w-full h-full object-cover" alt="Jorge" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+                            </div>
+                        </div>
+                        <div class="mt-8 text-center max-w-xs flex flex-col items-center">
+                            <h3 class="font-cookie text-amber-200 text-5xl mb-3">Jorge</h3>
+                            <p class="text-slate-300 font-light italic text-sm md:text-base leading-relaxed mb-6">
+                                "Desde el primer día supe que serías mi compañera de aventuras. Gracias por caminar a mi lado."
+                            </p>
+                            <a href="https://instagram.com/jorgegiovagnoli" target="_blank" rel="noopener noreferrer" 
+                               class="flex items-center gap-2 px-4 py-2 bg-rose-500/10 border border-rose-400/40 rounded-full text-rose-300 text-xs tracking-widest uppercase hover:bg-rose-500/20 hover:border-rose-300 transition-all duration-300 active:scale-95 shadow-[0_0_15px_rgba(244,63,94,0.2)]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.917 3.917 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                                </svg>
+                                Instagram
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+<!-- SECCIÓN: NUESTRO VUELO (BOARDING PASS) -->
+        <section id="nuestro-vuelo" class="snap-start relative w-full min-h-[100dvh] bg-[#070707] flex items-center justify-center py-20 px-4 overflow-hidden">
+            <!-- Fondo sutil con brillo dorado -->
+            <div class="absolute inset-0 z-0 pointer-events-none">
+                <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-[120px]"></div>
+                <div class="bottom-1/4 right-1/4 w-96 h-96 bg-amber-300/10 rounded-full blur-[120px] absolute"></div>
             </div>
 
-            <div class="mt-10 flex flex-col items-center">
-                <div class="mb-3 animate-bounce">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                    </svg>
-                    <span class="text-amber-200 text-[10px] uppercase tracking-tighter font-bold">Haga click para reservar</span>
+            <div class="relative z-10 max-w-5xl w-full">
+                <!-- Encabezado -->
+                <div class="text-center mb-12 opacity-0 animate-fade">
+                    <span class="text-amber-200/80 uppercase tracking-[0.4em] text-[10px] md:text-xs font-bold">
+                        Itinerario de los Novios • Arajet
+                    </span>
+                    <h2 class="text-amber-200 text-5xl md:text-7xl font-cookie mt-2 mb-4">
+                        ¡Volamos juntos!
+                    </h2>
+                    <p class="text-white/75 text-sm md:text-base font-light max-w-xl mx-auto leading-relaxed">
+                        Si querés compartir el viaje con nosotros, estos son los vuelos que ya sacamos. 
+                        Tocá el número de vuelo para copiarlo y buscarlo en <strong class="text-amber-200 font-medium">Arajet</strong>.
+                    </p>
                 </div>
 
-                <a 
-                    href="https://www.palladiumhotelgroup.com/es/bodas/ludmila-y-jorge" 
-                    target="_blank" 
-                    class="px-10 py-4 bg-amber-200 text-black font-bold rounded-full uppercase tracking-widest text-sm hover:bg-white transition-colors duration-300 shadow-[0_10px_20px_rgba(251,191,36,0.3)]"
-                >
-                    Reservar Ahora
-                </a>
+                <!-- Contenedor de los 2 Boarding Passes -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+                    
+                    <!-- TARJETA 1: VUELO DE IDA -->
+                    <div class="bg-white/[0.06] backdrop-blur-md border border-white/15 rounded-[2rem] p-6 md:p-8 shadow-2xl relative overflow-hidden flex flex-col justify-between">
+                        <!-- Etiqueta superior -->
+                        <div class="flex items-center justify-between border-b border-dashed border-white/20 pb-4 mb-6">
+                            <div class="flex items-center gap-2">
+                                <span class="px-3 py-1 bg-amber-200/15 border border-amber-200/40 rounded-full text-amber-200 text-[10px] font-bold uppercase tracking-widest">
+                                    Vuelo de Ida
+                                </span>
+                                <span class="text-white/50 text-xs">Directo</span>
+                            </div>
+                            <button 
+                                type="button"
+                                data-copy="DM 6267"
+                                class="copy-flight-btn flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-amber-200 hover:text-black text-amber-200 text-xs font-mono font-bold transition-all cursor-pointer active:scale-95"
+                                title="Copiar código de vuelo"
+                            >
+                                <span>DM 6267</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Ruta EZE -> PUJ -->
+                        <div class="flex items-center justify-between my-2">
+                            <div class="text-left">
+                                <p class="text-3xl md:text-4xl font-bold text-white tracking-wider">EZE</p>
+                                <p class="text-xs text-white/60 mt-1">Buenos Aires, AR</p>
+                                <p class="text-amber-200 font-semibold text-sm md:text-base mt-2">07:35 a.m.</p>
+                            </div>
+
+                            <!-- Avión y duración -->
+                            <div class="flex flex-col items-center px-2 flex-1">
+                                <span class="text-[10px] text-white/50 uppercase tracking-widest mb-1">7h 55m</span>
+                                <div class="w-full flex items-center gap-2">
+                                    <div class="h-[1px] flex-1 bg-gradient-to-r from-transparent via-amber-200/50 to-amber-200"></div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 fill-amber-200 rotate-90">
+                                        <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                                    </svg>
+                                    <div class="h-[1px] flex-1 bg-gradient-to-l from-transparent via-amber-200/50 to-amber-200"></div>
+                                </div>
+                                <span class="text-[10px] text-amber-200/70 mt-1">Sáb 06 Mar 2027</span>
+                            </div>
+
+                            <div class="text-right">
+                                <p class="text-3xl md:text-4xl font-bold text-white tracking-wider">PUJ</p>
+                                <p class="text-xs text-white/60 mt-1">Punta Cana, RD</p>
+                                <p class="text-amber-200 font-semibold text-sm md:text-base mt-2">02:30 p.m.</p>
+                            </div>
+                        </div>
+
+                        <!-- Pie estilo ticket con muescas laterales -->
+                        <div class="relative mt-6 pt-4 border-t border-dashed border-white/20 flex items-center justify-between text-xs text-white/60">
+                            <span>Aerolínea: <strong class="text-white">Arajet</strong></span>
+                            <span>Tarifa: <strong class="text-white">Comfort</strong></span>
+                        </div>
+                    </div>
+
+                    <!-- TARJETA 2: VUELO DE REGRESO -->
+                    <div class="bg-white/[0.06] backdrop-blur-md border border-white/15 rounded-[2rem] p-6 md:p-8 shadow-2xl relative overflow-hidden flex flex-col justify-between">
+                        <!-- Etiqueta superior -->
+                        <div class="flex items-center justify-between border-b border-dashed border-white/20 pb-4 mb-6">
+                            <div class="flex items-center gap-2">
+                                <span class="px-3 py-1 bg-white/10 border border-white/25 rounded-full text-white/90 text-[10px] font-bold uppercase tracking-widest">
+                                    Vuelo de Regreso
+                                </span>
+                                <span class="text-white/50 text-xs">Directo</span>
+                            </div>
+                            <button 
+                                type="button"
+                                data-copy="DM 6260"
+                                class="copy-flight-btn flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-amber-200 hover:text-black text-amber-200 text-xs font-mono font-bold transition-all cursor-pointer active:scale-95"
+                                title="Copiar código de vuelo"
+                            >
+                                <span>DM 6260</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Ruta PUJ -> EZE -->
+                        <div class="flex items-center justify-between my-2">
+                            <div class="text-left">
+                                <p class="text-3xl md:text-4xl font-bold text-white tracking-wider">PUJ</p>
+                                <p class="text-xs text-white/60 mt-1">Punta Cana, RD</p>
+                                <p class="text-amber-200 font-semibold text-sm md:text-base mt-2">07:02 p.m.</p>
+                            </div>
+
+                            <!-- Avión y duración -->
+                            <div class="flex flex-col items-center px-2 flex-1">
+                                <span class="text-[10px] text-white/50 uppercase tracking-widest mb-1">7h 58m</span>
+                                <div class="w-full flex items-center gap-2">
+                                    <div class="h-[1px] flex-1 bg-gradient-to-r from-transparent via-amber-200/50 to-amber-200"></div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 fill-amber-200 rotate-90">
+                                        <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                                    </svg>
+                                    <div class="h-[1px] flex-1 bg-gradient-to-l from-transparent via-amber-200/50 to-amber-200"></div>
+                                </div>
+                                <span class="text-[10px] text-amber-200/70 mt-1">Sáb 13 Mar 2027</span>
+                            </div>
+
+                            <div class="text-right">
+                                <p class="text-3xl md:text-4xl font-bold text-white tracking-wider">EZE</p>
+                                <p class="text-xs text-white/60 mt-1">Buenos Aires, AR</p>
+                                <p class="text-amber-200 font-semibold text-sm md:text-base mt-2">
+                                    04:00 a.m. <span class="block text-[9px] text-white/50 font-normal uppercase">(Día siguiente)</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Pie estilo ticket -->
+                        <div class="relative mt-6 pt-4 border-t border-dashed border-white/20 flex items-center justify-between text-xs text-white/60">
+                            <span>Aerolínea: <strong class="text-white">Arajet</strong></span>
+                            <span>Asientos: <strong class="text-white">Check-in previo</strong></span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Botones de acción inferiores -->
+                <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a 
+                        href="https://www.arajet.com" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="w-full sm:w-auto px-8 py-3.5 bg-amber-200 text-black font-bold rounded-full uppercase tracking-widest text-xs hover:bg-white transition-colors duration-300 shadow-[0_10px_20px_rgba(251,191,36,0.25)] text-center"
+                    >
+                        Buscar en Arajet.com
+                    </a>
+
+                    <a 
+                        href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Ludmila+%26+Jorge+-+Punta+Cana&dates=20270306T103500Z/20270314T070000Z&details=Vuelo+Ida+Arajet+DM+6267+(06+Mar+07:35)+%7C+Boda+09+Marzo+2027+en+Grand+Palladium+Punta+Cana+%7C+Vuelo+Regreso+DM+6260+(13+Mar+19:02)&location=Grand+Palladium+Punta+Cana+Resort+%26+Spa" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="w-full sm:w-auto px-8 py-3.5 bg-white/10 border border-white/25 text-white font-semibold rounded-full uppercase tracking-widest text-xs hover:bg-white/20 transition-colors duration-300 text-center flex items-center justify-center gap-2"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <span>Agendar Viaje en Calendar</span>
+                    </a>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- Sección Álbum de Fotos compatible con Scroll Snap -->
-<section id="galeria-invitados" class="snap-start relative w-full min-h-screen flex items-center justify-center overflow-hidden py-20 px-4 bg-stone-900">
-  
-  <!-- Fondo decorativo sutil -->
-  <div class="absolute inset-0 z-0">
-    <div class="absolute inset-0 bg-black/60 z-10"></div>
-    <img 
-      src="/images/fondo-republica.jpg" 
-      class="w-full h-full object-cover blur-md scale-110" 
-      alt="Fondo Boda"
-    />
-  </div>
-
-  <div class="relative z-20 max-w-2xl w-full text-center">
-    
-    <!-- Título y Bajada -->
-    <div class="mb-8">
-      <h2 class="text-amber-200 text-4xl md:text-6xl font-cookie mb-4">
-        ¡Compartí tus fotos!
-      </h2>
-      <p class="text-white text-base md:text-lg font-light leading-relaxed max-w-lg mx-auto">
-        Escaneá el código QR con la cámara de tu celular o tocá el botón de abajo para subir todas las fotos y videos del viaje a nuestro álbum.
-      </p>
-    </div>
-
-    <!-- Tarjeta Glassmorphism -->
-    <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-[2.5rem] p-8 md:p-10 shadow-2xl flex flex-col items-center max-w-md mx-auto">
-      
-      <!-- Contenedor del QR -->
-      <div class="bg-white p-4 rounded-2xl shadow-lg mb-6">
-        <img 
-          src="/qr-boda.png" 
-          alt="Código QR Álbum de Fotos" 
-          class="w-48 h-48 md:w-52 md:h-52 object-contain"
-        />
-      </div>
-
-      <!-- Botón directo al álbum -->
-      <a 
-        href="https://photos.app.goo.gl/S6SsqvMYATFqbB2d6" 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        class="w-full px-8 py-4 bg-amber-200 text-black font-bold rounded-full uppercase tracking-widest text-xs md:text-sm hover:bg-white transition-colors duration-300 shadow-[0_10px_20px_rgba(251,191,36,0.3)] flex items-center justify-center gap-2"
-      >
-        <span>Subir Fotos al Álbum</span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-        </svg>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-
-<section class="snap-start relative w-full h-screen overflow-hidden flex items-center justify-center">
-    <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 bg-black/40 z-10"></div>
-        
-        <video 
-            autoplay 
-            muted 
-            loop 
-            playsinline 
-            class="w-full h-full object-cover"
-        >
-            <source src="/videos/playa-fondo.mp4" type="video/mp4" />
-            Tu navegador no soporta videos.
-        </video>
-    </div>
-
-    <div class="relative z-20 px-6 max-w-5xl text-center">
-        <h2 class="font-cookie text-5xl md:text-8xl text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.5)] opacity-0 animate-fade-in-up">
-            El mejor regalo de tu parte, <br class="hidden md:block" />
-            será tu presencia en nuestra boda
-        </h2>
-        
-        <div class="mt-8 flex justify-center opacity-0 animate-fade-in-up-delayed">
-            <div class="h-[1px] w-24 bg-gradient-to-r from-transparent via-amber-200 to-transparent"></div>
-            <div class="mx-4 text-amber-200 text-xl">✨</div>
-            <div class="h-[1px] w-24 bg-gradient-to-r from-transparent via-amber-200 to-transparent"></div>
-        </div>
-    </div>
-</section>
+        </section>
 
 
 
 
+        <!-- SECCIÓN 4: EL LUGAR DE LA BODA -->
+        <section class="snap-start relative w-full min-h-[100dvh] flex items-center justify-center overflow-hidden py-20 px-4">
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 bg-black/50 z-10"></div> 
+                <img 
+                    src="/images/fondo-republica.jpg" 
+                    class="w-full h-full object-cover blur-sm scale-110" 
+                    alt="Fondo Punta Cana"
+                />
+            </div>
 
-<style>
-    /* Animación del aura de resplandor */
-    @keyframes pulseGlow {
-        0%, 100% { opacity: 0.3; transform: scale(1); }
-        50% { opacity: 0.6; transform: scale(1.1); }
-    }
+            <div class="relative z-20 max-w-4xl w-full text-center">
+                <div class="mb-12 opacity-0 animate-fade">
+                    <h2 class="text-amber-200 text-5xl md:text-7xl font-cookie mb-6">El lugar de nuestra Boda</h2>
+                    <p class="text-white text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto">
+                        Nuestro gran día empieza con un despegue. Salimos de casa con la valija llena de sueños para encontrarnos en las playas de República Dominicana. 
+                        <span class="block mt-4 text-amber-100/80 italic">Agenden la fecha, preparen el pasaporte y encontrémonos allá para disfrutar juntos.</span>
+                    </p>
+                </div>
 
-    .animate-pulse-glow {
-        animation: pulseGlow 4s infinite ease-in-out;
-    }
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-[2.5rem] p-8 md:p-12 shadow-2xl transition-transform hover:scale-[1.02] duration-500">
+                    <div class="mb-6 flex justify-center">
+                        <img 
+                            src="/images/logo-hotel.png" 
+                            class="h-20 md:h-28 object-contain" 
+                            alt="Logo Grand Palladium"
+                        />
+                    </div>
 
-    .animate-pulse-glow-delay {
-        animation: pulseGlow 4s infinite ease-in-out 2s;
-    }
-</style>
+                    <div class="text-white">
+                        <span class="text-amber-200 uppercase tracking-[0.3em] text-xs font-bold">Alojamiento All Inclusive</span>
+                        <h3 class="text-3xl md:text-4xl font-serif mt-2 mb-1">Grand Palladium Punta Cana</h3>
+                        <p class="text-white/60 tracking-widest uppercase text-sm">Resort & Spa</p>
+                    </div>
+
+                    <div class="mt-10 flex flex-col items-center">
+                        <div class="mb-3 animate-bounce">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                            </svg>
+                            <span class="text-amber-200 text-[10px] uppercase tracking-tighter font-bold">Haga click para reservar</span>
+                        </div>
+
+                        <a 
+                            href="https://www.palladiumhotelgroup.com/es/bodas/ludmila-y-jorge" 
+                            target="_blank" 
+                            class="px-10 py-4 bg-amber-200 text-black font-bold rounded-full uppercase tracking-widest text-sm hover:bg-white transition-colors duration-300 shadow-[0_10px_20px_rgba(251,191,36,0.3)]"
+                        >
+                            Reservar Ahora
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: ÁLBUM DE FOTOS -->
+        <section id="galeria-invitados" class="snap-start relative w-full min-h-[100dvh] flex items-center justify-center overflow-hidden py-20 px-4 bg-stone-900">
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 bg-black/60 z-10"></div>
+                <img 
+                    src="/images/fondo-republica.jpg" 
+                    class="w-full h-full object-cover blur-md scale-110" 
+                    alt="Fondo Boda"
+                />
+            </div>
+
+            <div class="relative z-20 max-w-2xl w-full text-center">
+                <div class="mb-8">
+                    <h2 class="text-amber-200 text-4xl md:text-6xl font-cookie mb-4">
+                        ¡Compartí tus fotos!
+                    </h2>
+                    <p class="text-white text-base md:text-lg font-light leading-relaxed max-w-lg mx-auto">
+                        Escaneá el código QR con la cámara de tu celular o tocá el botón de abajo para subir todas las fotos y videos del viaje a nuestro álbum.
+                    </p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-[2.5rem] p-8 md:p-10 shadow-2xl flex flex-col items-center max-w-md mx-auto">
+                    <div class="bg-white p-4 rounded-2xl shadow-lg mb-6">
+                        <img 
+                            src="/qr-boda.png" 
+                            alt="Código QR Álbum de Fotos" 
+                            class="w-48 h-48 md:w-52 md:h-52 object-contain"
+                        />
+                    </div>
+
+                    <a 
+                        href="https://photos.app.goo.gl/LWCvswczocuWksZd8" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="w-full px-8 py-4 bg-amber-200 text-black font-bold rounded-full uppercase tracking-widest text-xs md:text-sm hover:bg-white transition-colors duration-300 shadow-[0_10px_20px_rgba(251,191,36,0.3)] flex items-center justify-center gap-2"
+                    >
+                        <span>Subir Fotos al Álbum</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 6: CIERRE / VIDEO -->
+        <section class="snap-start relative w-full h-[100dvh] overflow-hidden flex items-center justify-center">
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 bg-black/40 z-10"></div>
+                <video 
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline 
+                    class="w-full h-full object-cover"
+                >
+                    <source src="/videos/playa-fondo.mp4" type="video/mp4" />
+                    Tu navegador no soporta videos.
+                </video>
+            </div>
+
+            <div class="relative z-20 px-6 max-w-5xl text-center">
+                <h2 class="font-cookie text-5xl md:text-8xl text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.5)] opacity-0 animate-fade-in-up">
+                    El mejor regalo de tu parte, <br class="hidden md:block" />
+                    será tu presencia en nuestra boda
+                </h2>
+                
+                <div class="mt-8 flex justify-center opacity-0 animate-fade-in-up-delayed">
+                    <div class="h-[1px] w-24 bg-gradient-to-r from-transparent via-amber-200 to-transparent"></div>
+                    <div class="mx-4 text-amber-200 text-xl">✨</div>
+                    <div class="h-[1px] w-24 bg-gradient-to-r from-transparent via-amber-200 to-transparent"></div>
+                </div>
+            </div>
+        </section>
 
     </main>
 </Layout>
 
 <style>
+    /* Estabilización de Scroll */
+    main::-webkit-scrollbar { display: none; }
+    main { -ms-overflow-style: none; scrollbar-width: none; }
+
     .animate-slow-zoom {
-        animation: slowZoom 10s infinite alternate ease-in-out; /* Más lento para que no maree */
+        animation: slowZoom 10s infinite alternate ease-in-out;
     }
 
-    /* Ajustamos el delay para esperar a que el pasaporte se abra (aprox 1s) */
     .animate-fade-in-up {
         animation: fadeInUp 0.8s ease-out 1.2s forwards;
     }
@@ -316,6 +471,10 @@ import MusicaFondo from '../components/MusicaFondo.astro'; // <--- IMPORTAR
 
     .animate-fade-in-up-late {
         animation: fadeInUp 0.8s ease-out 1.8s forwards;
+    }
+
+    .animate-fade {
+        animation: fadeIn 1.5s ease-out forwards;
     }
 
     @keyframes fadeInUp {
@@ -333,20 +492,39 @@ import MusicaFondo from '../components/MusicaFondo.astro'; // <--- IMPORTAR
         from { transform: scale(1.05); }
         to { transform: scale(1.15); }
     }
-</style>
-
-<style is:global>
-    /* Estabilización de Scroll */
-    main::-webkit-scrollbar { display: none; }
-    main { -ms-overflow-style: none; scrollbar-width: none; }
-    
-    /* Animación genérica para secciones de abajo */
-    .animate-fade {
-        animation: fadeIn 1.5s ease-out forwards;
-    }
 
     @keyframes fadeIn {
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
     }
+
+    @keyframes pulseGlow {
+        0%, 100% { opacity: 0.3; transform: scale(1); }
+        50% { opacity: 0.6; transform: scale(1.1); }
+    }
+
+    .animate-pulse-glow {
+        animation: pulseGlow 4s infinite ease-in-out;
+    }
+
+    .animate-pulse-glow-delay {
+        animation: pulseGlow 4s infinite ease-in-out 2s;
+    }
 </style>
+<script>
+    document.querySelectorAll('.copy-flight-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const code = btn.getAttribute('data-copy');
+            if (!code) return;
+            navigator.clipboard.writeText(code);
+            const span = btn.querySelector('span');
+            if (span) {
+                const original = span.textContent;
+                span.textContent = '¡Copiado!';
+                setTimeout(() => {
+                    span.textContent = original;
+                }, 2000);
+            }
+        });
+    });
+</script>
